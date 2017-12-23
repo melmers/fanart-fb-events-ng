@@ -1,11 +1,12 @@
-app.controller('productsController', function($scope, $mdDialog, $mdToast, productsFactory){
+app.controller('eventsController', function($scope, $mdDialog, $mdToast, eventsFactory){
 
-    // read products
-    $scope.readProducts = function(){
+    // read events
+    $scope.readEvents = function(){
 
-        // use products factory
-        productsFactory.readProducts().then(function successCallback(response){
-            $scope.products = response.data.records;
+        // use events factory
+        eventsFactory.readEvents().then(function successCallback(response){
+            $scope.events = response.data.data;   //FB graph data
+            //$scope.products = response.data.records;  //REST data
         }, function errorCallback(response){
             $scope.showToast("Unable to read record.");
         });
