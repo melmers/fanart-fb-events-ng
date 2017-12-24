@@ -8,7 +8,12 @@ app.controller('eventsController', function($scope, $mdDialog, $mdToast, eventsF
             $scope.events = response.data.data;   //FB graph data
             //$scope.products = response.data.records;  //REST data
 
-            var today = new Date().toISOString();
+            var today = new Date();
+            today.setHours(0);
+            today.setMinutes(0);
+            today.setSeconds(0);
+            today.setMilliseconds(0);
+            today = today.toISOString();
 
             angular.forEach($scope.events, function(event, i){
                 if(event.event_times != null) {
