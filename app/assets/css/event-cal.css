@@ -261,6 +261,9 @@ div.events {
 .results-row {
 	display: block;
 }
+.buffer {
+	height: 1em;
+}
 #ifrmX {
     border: 10px solid rgb(127, 0, 0);
     border: 10px solid rgba(255, 0, 0, .5);
