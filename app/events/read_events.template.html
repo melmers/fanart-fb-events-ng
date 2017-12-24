@@ -21,17 +21,17 @@
             <!-- show event record list -->
             <ol class='events-list'>
                 <md-list ng-init="readEvents()">
-                    <md-list-item class="md-8-line" ng-repeat="event in events">
+                    <md-list-item class="md-8-line" ng-repeat="event in events | orderBy:'start_time'">
     
                         <!-- event information -->
-                        <div class="md-list-item-text">
+                        <div class="md-list-item-text" style="width:100%;">
                             <li>
                                 <div class="fanart" style='background-image: url("{{event.cover.source}}");'></div>
                                 <div id=cal-title>
-                                    <div id=cal-day>{{event.start_time}}</div>
+                                    <div id=cal-day>{{event.start_time | date:'EEEE, MMMM d'}}</div>
                                     <table id="tblEvent">
                                         <tr>
-                                            <td><span class="event-time">{{event.start_time}}</span></td>
+                                            <td><span class="event-time">{{event.start_time | date:'h:mma'}}</span></td>
                                             <td class="event-title">{{event.name}}</td>
                                         </tr>
                                     </table>
